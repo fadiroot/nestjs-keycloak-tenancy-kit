@@ -1,0 +1,44 @@
+# Stage 1: Build Stage
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Install Docker CLI
+RUN apk add --no-cache docker-cli
+
+# Install pnpm globally
+RUN npm install -g pnpm ts-node ts-node-dev && \
+    apk add --no-cache bash
+  
+# Copy package.json, tsconfig.json, tsconfig.build.json, and other necessary files
+COPY package.json tsconfig.json tsconfig.build.json pnpm-lock.yaml ./
+
+# Install dependencies using pnpm
+RUN pnpm install
+
+# Copy wait-for-it.sh script
+COPY scripts/wait-for-it.sh ./wait-for-it.sh
+
+# Copy export-realm.sh script
+COPY scripts/export-realm.sh ./export-realm.sh
+
+# Copy entrypoint.sh script
+COPY scripts/entrypoint.sh ./entrypoint.sh
+
+
+# Set correct permissions for all scripts
+RUN chmod +x ./wait-for-it.sh ./entrypoint.sh ./export-realm.sh
+
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the app's port
+EXPOSE 3000
+
+# Use ts-node-dev for development to enable hot-reloading
+ENTRYPOINT ["./entrypoint.sh"]
+CMD ["pnpm", "run", "start:dev" ]
+
+

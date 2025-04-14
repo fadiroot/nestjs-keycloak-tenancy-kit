@@ -1,0 +1,10 @@
+{
+  "greeting": "Hello, {test}",
+  "WELCOME_MESSAGE": "Welcome to our application!",
+  "database": {
+    "error": "An error occurred while processing the database operation {operation} on resource {resource}."
+  },
+  "general": {
+    "error": "An unexpected error occurred: {message}."
+  }
+}

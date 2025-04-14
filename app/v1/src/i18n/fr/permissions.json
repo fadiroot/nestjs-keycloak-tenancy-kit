@@ -1,0 +1,42 @@
+{
+  "create": {
+    "success": "Permission créée avec succès.",
+    "error": "Échec de la création de la permission."
+  },
+  "getAll": {
+    "success": "Permissions récupérées avec succès.",
+    "error": "Échec de la récupération des permissions."
+  },
+  "get": {
+    "success": "Permission récupérée avec succès.",
+    "error": {
+      "notFound": "Permission avec l'ID {id} introuvable."
+    }
+  },
+  "update": {
+    "success": "Permission {name} mise à jour avec succès.",
+    "error": {
+      "notFound": "Permission avec l'ID {id} introuvable.",
+      "duplicate": "Le nom de la permission existe déjà."
+    }
+  },
+  "delete": {
+    "success": "Permission {name} supprimée avec succès.",
+    "error": {
+      "notFound": "Permission avec l'ID {id} introuvable.",
+      "references": "La permission ne peut pas être supprimée en raison de références existantes."
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "Le nom de la permission est obligatoire.",
+      "maxLength": "Le nom de la permission doit contenir moins de 50 caractères.",
+      "IsNotEmpty": "Le nom de la permission ne peut pas être vide.",
+      "alreadyExists": "La permission avec ce nom existe déjà."
+    },
+    "resource": {
+      "required": "La ressource est obligatoire.",
+      "IsString": "La ressource doit être une chaîne de caractères."
+    }
+  }
+}

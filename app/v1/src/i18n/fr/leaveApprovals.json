@@ -1,0 +1,43 @@
+{
+  "create": {
+    "success": "Approbation de congé créée avec succès.",
+    "error": "Échec de la création de l'approbation de congé.",
+    "alreadyExists": "L'approbation de congé existe déjà."
+  },
+  "getAll": {
+    "success": "Approbations de congés récupérées avec succès.",
+    "error": "Échec de la récupération des approbations de congés."
+  },
+  "get": {
+    "success": "Approbation de congé récupérée avec succès.",
+    "error": {
+      "notFound": "Approbation de congé avec l'ID {id} introuvable."
+    }
+  },
+  "update": {
+    "success": "Approbation de congé mise à jour avec succès.",
+    "error": {
+      "notFound": "Approbation de congé avec l'ID {id} introuvable.",
+      "duplicate": "L'approbation de congé existe déjà."
+    }
+  },
+  "delete": {
+    "success": "Approbation de congé supprimée avec succès.",
+    "error": {
+      "notFound": "Approbation de congé avec l'ID {id} introuvable.",
+      "references": "Impossible de supprimer l'approbation de congé en raison de références existantes."
+    }
+  },
+  "validation": {
+    "leaveId": {
+      "required": "L'ID du congé est requis.",
+      "isString": "L'ID du congé doit être une chaîne de caractères.",
+      "isUUID": "L'ID du congé doit être un UUID valide."
+    },
+    "approverId": {
+      "required": "L'ID de l'approbateur est requis.",
+      "isString": "L'ID de l'approbateur doit être une chaîne de caractères.",
+      "isUUID": "L'ID de l'approbateur doit être un UUID valide."
+    }
+  }
+}

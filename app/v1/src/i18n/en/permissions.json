@@ -1,0 +1,42 @@
+{
+  "create": {
+    "success": "Permission created successfully.",
+    "error": "Failed to create permission."
+  },
+  "getAll": {
+    "success": "Permissions retrieved successfully.",
+    "error": "Failed to retrieve permissions."
+  },
+  "get": {
+    "success": "Permission retrieved successfully.",
+    "error": {
+      "notFound": "Permission with ID {id} not found."
+    }
+  },
+  "update": {
+    "success": "Permission {name} updated successfully.",
+    "error": {
+      "notFound": "Permission with ID {id} not found.",
+      "duplicate": "Permission name already exists."
+    }
+  },
+  "delete": {
+    "success": "Permission {name} deleted successfully.",
+    "error": {
+      "notFound": "Permission with ID {id} not found.",
+      "references": "Permission cannot be deleted due to existing references."
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "The permission name is required.",
+      "maxLength": "The permission name must be less than 50 characters.",
+      "IsNotEmpty": "The permission name cannot be empty.",
+      "alreadyExists": "The permission with this name already exists."
+    },
+    "resource": {
+      "required": "The resource is required.",
+      "IsString": "The resource must be a string."
+    }
+  }
+}

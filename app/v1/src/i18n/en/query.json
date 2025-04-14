@@ -1,0 +1,19 @@
+{
+  "validation": {
+    "page": {
+      "mustBeInteger": "Page must be an integer."
+    },
+    "limit": {
+      "mustBeInteger": "Limit must be an integer."
+    },
+    "sort": {
+      "mustBeString": "Sort must be a string."
+    },
+    "search": {
+      "mustBeString": "Search must be a string."
+    },
+    "filter": {
+      "mustBeObject": "Filter must be an object."
+    }
+  }
+}

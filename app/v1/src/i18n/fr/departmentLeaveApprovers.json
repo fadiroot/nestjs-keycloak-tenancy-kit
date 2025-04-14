@@ -1,0 +1,42 @@
+{
+    "create": {
+      "success": "Approbateur de congé de département créé avec succès.",
+      "error": "Échec de la création de l'approbateur de congé de département.",
+      "alreadyExists": "L'approbateur de congé de département existe déjà."
+    },
+    "getAll": {
+      "success": "Approbateurs de congé de département récupérés avec succès.",
+      "error": "Échec de la récupération des approbateurs de congé de département."
+    },
+    "get": {
+      "success": "Approbateur de congé de département récupéré avec succès.",
+      "error": {
+        "notFound": "Approbateur de congé de département avec l'ID {id} introuvable."
+      }
+    },
+    "update": {
+      "success": "Approbateur de congé de département mis à jour avec succès.",
+      "error": {
+        "notFound": "Approbateur de congé de département avec l'ID {id} introuvable.",
+        "duplicate": "L'approbateur de congé de département existe déjà."
+      }
+    },
+    "delete": {
+      "success": "Approbateur de congé de département supprimé avec succès.",
+      "error": {
+        "notFound": "Approbateur de congé de département avec l'ID {id} introuvable.",
+        "references": "L'approbateur de congé de département ne peut pas être supprimé en raison de références existantes."
+      }
+    },
+    "validation": {
+      "userId": {
+        "required": "L'ID utilisateur est requis.",
+        "isNumber": "L'ID utilisateur doit être un nombre."
+      },
+      "departmentId": {
+        "required": "L'ID du département est requis.",
+        "isNumber": "L'ID du département doit être un nombre."
+      }
+    }
+  }
+  

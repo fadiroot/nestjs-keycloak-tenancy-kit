@@ -1,0 +1,59 @@
+{
+  "create": {
+    "success": "Department created successfully.",
+    "error": "Failed to create department."
+  },
+  "getAll": {
+    "success": "Departments retrieved successfully.",
+    "error": "Failed to retrieve departments."
+  },
+  "get": {
+    "success": "Department retrieved successfully.",
+    "error": {
+      "notFound": "Department with ID {id} not found."
+    }
+  },
+  "update": {
+    "success": "Department {name} updated successfully.",
+    "error": {
+      "notFound": "Department with ID {id} not found.",
+      "duplicate": "Department name already exists."
+    }
+  },
+  "delete": {
+    "success": "Department {name} deleted successfully.",
+    "error": {
+      "notFound": "Department with ID {id} not found.",
+      "references": "Department cannot be deleted due to existing references."
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "The department name is required.",
+      "maxLength": "The department name must be less than 50 characters.",
+      "IsNotEmpty": "The department name cannot be empty.",
+      "alreadyExists": "The department with the name already exists."
+    },
+    "approvers": {
+      "required": "Approvers array is required.",
+      "notEmpty": "Approvers array cannot be empty.",
+      "isArray": "Approvers must be an array of user IDs.",
+      "arrayNotEmpty": "Approvers must be an array of user IDs.",
+      "isUuid": "Each approver ID must be a valid UUID."
+    },
+    "users": {
+      "required": "Users array is required.",
+      "notEmpty": "Users array cannot be empty.",
+      "isArray": "Users must be an array of user IDs.",
+      "arrayNotEmpty": "Users must be an array of user IDs.",
+      "IsUuid": "Each user ID must be a valid UUID."
+    },
+    "approverType": {
+      "required": "The approver type is required.",
+      "isEnum": "The approver type must be one of the valid options."
+    },
+    "isDefault": {
+      "boolean": "The default status must be a boolean."
+    }
+  }
+}

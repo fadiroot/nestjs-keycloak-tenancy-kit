@@ -1,0 +1,43 @@
+{
+  "create": {
+    "success": "Leave type special employee created successfully.",
+    "error": "Failed to create leave type special employee.",
+    "alreadyExists": "Leave type special employee already exists."
+  },
+  "getAll": {
+    "success": "Leave type special employees retrieved successfully.",
+    "error": "Failed to retrieve leave type special employees."
+  },
+  "get": {
+    "success": "Leave type special employee retrieved successfully.",
+    "error": {
+      "notFound": "Leave type special employee with ID {id} not found."
+    }
+  },
+  "update": {
+    "success": "Leave type special employee updated successfully.",
+    "error": {
+      "notFound": "Leave type special employee with ID {id} not found.",
+      "duplicate": "Leave type special employee already exists."
+    }
+  },
+  "delete": {
+    "success": "Leave type special employee deleted successfully.",
+    "error": {
+      "notFound": "Leave type special employee with ID {id} not found.",
+      "references": "Leave type special employee cannot be deleted due to existing references."
+    }
+  },
+  "validation": {
+    "userId": {
+      "required": "The user ID is required.",
+      "isString": "The user ID must be a string.",
+      "isUUID": "The user ID must be a valid UUID."
+    },
+    "leaveTypeId": {
+      "required": "The leave type ID is required.",
+      "isString": "The leave type ID must be a string.",
+      "isUUID": "The leave type ID must be a valid UUID."
+    }
+  }
+}

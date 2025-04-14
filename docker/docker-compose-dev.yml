@@ -1,0 +1,125 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    restart: always
+    ports:
+      - '127.0.0.1:${APP_PORT}:${APP_PORT}'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../app:/usr/src/app/app
+      - ../package.json:/usr/src/app/package.json
+      - ../tsconfig.json:/usr/src/app/tsconfig.json
+      - ../tsconfig.build.json:/usr/src/app/tsconfig.build.json
+      - ../nest-cli.json:/usr/src/app/nest-cli.json
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - tenant-network
+    env_file:
+      - ../.env
+    labels:
+        io.portainer.accesscontrol.users: softyhr  
+   # healthcheck:
+   #   test: ['CMD-SHELL', 'curl -f http://localhost:${APP_PORT}/health || exit 1']
+   #  interval: 30s
+   #  timeout: 10s
+   #  retries: 5
+ 
+  db:
+    image: postgres:16
+    restart: always
+    ports:
+      - '127.0.0.1:${POSTGRES_PORT}:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../scripts/init-db.sh:/docker-entrypoint-init-db.d/init-db.sh
+    networks:
+      - tenant-network
+    env_file:
+      - ../.env
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    command: ['postgres', '-c', 'max_connections=1000']
+    labels:
+        io.portainer.accesscontrol.users: softyhr  
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0
+    restart: always
+    ports:
+      - '127.0.0.1:8081:8080'
+    env_file:
+      - ../.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../keycloak/themes:/opt/keycloak/themes
+      - keycloak_exports:/opt/keycloak/data/export
+      - ../keycloak-custom/keycloak-custom-event-listener/target/keycloak-organization-spi-1.0-SNAPSHOT.jar:/opt/keycloak/providers/keycloak-organization-spi-1.0-SNAPSHOT.jar
+    command:
+      - 'start-dev'
+      - '--import-realm'
+      - '--spi-event-listener-custom-provider=custom-event-listener'
+      - '--spi-cookie-default-secure=false'
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=0sBj0ztpQOs8D4i5Dqamo
+      - KEYCLOAK_CORS=true
+      - KEYCLOAK_HEADERS=Access-Control-Allow-Origin
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
+      - KC_DB_USERNAME=${POSTGRES_USER}
+      - KC_DB_PASSWORD=${POSTGRES_PASSWORD}
+      - KC_HEALTH_ENABLED=true
+      - KC_METRICS_ENABLED=true
+      - KC_FEATURES=preview
+      - KC_HOSTNAME_STRICT=true
+      - KC_HOSTNAME=https://softy-hr-auth.softylines.com
+#      - KC_PROXY=edge
+      - KC_HTTP_ENABLED=false
+      - KC_HTTPS_REQUIRED=all
+      - KC_SPI_COOKIE_DEFAULT_SAME_SITE_STRICT=false
+      - KC_SPI_COOKIE_DEFAULT_SECURE=false
+      - KC_SPI_COOKIE=default
+      - NODE_ENV=${NODE_ENV}
+#      - API_HOST = ${API_HOST}
+#      - APP_PORT = ${APP_PORT}
+#    healthcheck:
+#      test: ['CMD', 'curl', '-f', 'http://localhost:8080/health/ready || exit 1']
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+    networks:
+      - tenant-network
+    labels:
+        io.portainer.accesscontrol.users: softyhr  
+ 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '127.0.0.1:8100:8080'
+    environment:
+      - ADMINER_DEFAULT_SERVER=${POSTGRES_HOST}
+    networks:
+      - tenant-network
+    labels:
+        io.portainer.accesscontrol.users: softyhr  
+ 
+networks:
+  tenant-network:
+    name: tenant-network
+    driver: bridge
+    attachable: true
+ 
+volumes:
+  pgdata:
+    name: pgdata_v16
+  keycloak_exports:

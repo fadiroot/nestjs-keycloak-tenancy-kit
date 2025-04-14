@@ -1,0 +1,43 @@
+{
+  "create": {
+    "success": "Leave approval created successfully.",
+    "error": "Failed to create leave approval.",
+    "alreadyExists": "Leave approval already exists."
+  },
+  "getAll": {
+    "success": "Leave approvals retrieved successfully.",
+    "error": "Failed to retrieve leave approvals."
+  },
+  "get": {
+    "success": "Leave approval retrieved successfully.",
+    "error": {
+      "notFound": "Leave approval with ID {id} not found."
+    }
+  },
+  "update": {
+    "success": "Leave approval updated successfully.",
+    "error": {
+      "notFound": "Leave approval with ID {id} not found.",
+      "duplicate": "Leave approval already exists."
+    }
+  },
+  "delete": {
+    "success": "Leave approval deleted successfully.",
+    "error": {
+      "notFound": "Leave approval with ID {id} not found.",
+      "references": "Leave approval cannot be deleted due to existing references."
+    }
+  },
+  "validation": {
+    "leaveId": {
+      "required": "The leave ID is required.",
+      "isString": "The leave ID must be a string.",
+      "isUUID": "The leave ID must be a valid UUID."
+    },
+    "approverId": {
+      "required": "The approver ID is required.",
+      "isString": "The approver ID must be a string.",
+      "isUUID": "The approver ID must be a valid UUID."
+    }
+  }
+}

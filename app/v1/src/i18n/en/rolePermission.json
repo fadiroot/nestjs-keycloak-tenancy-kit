@@ -1,0 +1,44 @@
+{
+    "create": {
+      "success": "RolePermission created successfully.",
+      "error": "Failed to create RolePermission.",
+      "alreadyExists": "RolePermission already exists."
+    },
+    "getAll": {
+      "success": "RolePermissions retrieved successfully.",
+      "error": "Failed to retrieve RolePermissions."
+    },
+    "get": {
+      "success": "RolePermission retrieved successfully.",
+      "error": {
+        "notFound": "RolePermission with ID {id} not found."
+      }
+    },
+    "update": {
+      "success": "RolePermission updated successfully.",
+      "error": {
+        "notFound": "RolePermission with ID {id} not found.",
+        "duplicate": "RolePermission already exists."
+      }
+    },
+    "delete": {
+      "success": "RolePermission deleted successfully.",
+      "error": {
+        "notFound": "RolePermission with ID {id} not found.",
+        "references": "RolePermission cannot be deleted due to existing references."
+      }
+    },
+    "validation": {
+      "roleId": {
+        "required": "The role ID is required.",
+        "isString": "The role ID must be a string.",
+        "isUUID": "The role ID must be a valid UUID."
+      },
+      "permissionId": {
+        "required": "The permission ID is required.",
+        "isString": "The permission ID must be a string.",
+        "isUUID": "The permission ID must be a valid UUID."
+      }
+    }
+  }
+  

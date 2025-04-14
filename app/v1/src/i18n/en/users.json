@@ -1,0 +1,104 @@
+{
+    "create": {
+      "success": "User created successfully.",
+      "error": "Failed to create user.",
+      "sync": {
+        "success": "User registration synchronized successfully.",
+        "error": "Failed to synchronize user registration."
+      }
+    },
+    "getAll": {
+      "success": "Users retrieved successfully.",
+      "error": "Failed to retrieve users."
+    },
+    "inviteOwner": {
+      "success": "Owner invitation sent successfully to {email}.",
+      "error": {
+        "general": "Failed to send owner invitation.",
+        "emailExists": "User with email {email} already exists.",
+        "invalidOrganization": "Invalid organization ID provided."
+      }
+    },
+    "inviteEmployee": {
+      "success": "Employee invitation sent successfully to {email}.",
+      "error": {
+        "general": "Failed to send employee invitation.",
+        "emailExists": "User with email {email} already exists.",
+        "invalidOrganization": "Invalid organization ID provided.",
+        "invalidDepartment": "Invalid department ID provided.",
+        "invalidLocation": "Invalid location ID provided.",
+        "invalidUserRole": "Invalid user role ID provided.",
+        "userAlreadyInvited": "User has already been invited."
+      }
+    },
+    "validation": {
+      "common": {
+        "organizationId": {
+          "required": "Organization ID is required.",
+          "invalid": "Invalid organization ID format."
+        },
+        "email": {
+          "required": "Email address is required.",
+          "invalid": "Invalid email address format.",
+          "maxLength": "Email address must be less than 255 characters."
+        },
+        "firstName": {
+          "required": "First name is required.",
+          "maxLength": "First name must be less than 100 characters.",
+          "invalid": "First name contains invalid characters."
+        },
+        "lastName": {
+          "required": "Last name is required.",
+          "maxLength": "Last name must be less than 100 characters.",
+          "invalid": "Last name contains invalid characters."
+        }
+      },
+      "employee": {
+        "username": {
+          "required": "Username is required.",
+          "maxLength": "Username must be less than 100 characters.",
+          "invalid": "Username contains invalid characters."
+        },
+        "gender": {
+          "required": "Gender is required.",
+          "invalid": "Invalid gender value. Must be 'male', 'female', or 'other'."
+        },
+        "socialSecurityNumber": {
+          "required": "Social security number is required.",
+          "invalid": "Social security number must contain only numbers and hyphens.",
+          "format": "Invalid social security number format."
+        },
+        "mobilePhoneNumber": {
+          "invalid": "Invalid mobile phone number format."
+        },
+        "workPhoneNumber": {
+          "invalid": "Invalid work phone number format."
+        },
+        "birthday": {
+          "invalid": "Invalid birthday date format."
+        },
+        "employmentStatus": {
+          "invalid": "Invalid employment status value."
+        },
+        "locationId": {
+          "invalid": "Invalid location ID format."
+        },
+        "userRoleId": {
+          "invalid": "Invalid user role ID format."
+        },
+        "departmentId": {
+          "invalid": "Invalid department ID format."
+        }
+      }
+    },
+    "welcomeKit": {
+      "found": "Welcome kit found for email {{email}}",
+      "notFound": "No user found for email {{email}}",
+      "noKitCreated": "No welcome kit created for email {{email}}",
+      "error": {
+        "invalidEmail": "Invalid email format",
+        "retrieve": "Failed to retrieve welcome kit",
+        "unexpected": "An unexpected error occurred while retrieving welcome kit"
+      }
+    }
+  }

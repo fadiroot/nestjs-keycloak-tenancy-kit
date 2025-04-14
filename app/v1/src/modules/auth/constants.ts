@@ -1,0 +1,1 @@
+export const GUARD_SERVICE = 'GUARD_SERVICE'; 

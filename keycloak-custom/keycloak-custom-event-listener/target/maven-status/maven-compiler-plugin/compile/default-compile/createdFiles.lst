@@ -1,0 +1,3 @@
+com/example/keycloak/spi/OrganizationEventListenerFactory.class
+com/example/keycloak/spi/OrganizationEventProvider.class
+com/example/keycloak/spi/OrganizationEventListenerProvider.class

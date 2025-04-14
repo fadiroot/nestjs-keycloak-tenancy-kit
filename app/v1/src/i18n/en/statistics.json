@@ -1,0 +1,9 @@
+{
+    "getStatistics": {
+        "success": "Statistics retrieved successfully.",
+        "error": {
+            "invalidEntity": "Invalid entity provided. Only 'department' or 'location' are allowed.",
+            "retrievalFailed": "Failed to retrieve statistics."
+        }
+    }
+}

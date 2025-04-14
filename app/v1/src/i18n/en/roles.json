@@ -1,0 +1,46 @@
+{
+  "create": {
+    "success": "Role created successfully.",
+    "error": "Failed to create role."
+  },
+  "getAll": {
+    "success": "Roles retrieved successfully.",
+    "error": "Failed to retrieve roles."
+  },
+  "get": {
+    "success": "Role retrieved successfully.",
+    "error": {
+      "notFound": "Role with ID {id} not found."
+    }
+  },
+  "update": {
+    "success": "Role {name} updated successfully.",
+    "error": {
+      "notFound": "Role with ID {id} not found.",
+      "duplicate": "Role name already exists."
+    }
+  },
+  "delete": {
+    "success": "Role {name} deleted successfully.",
+    "error": {
+      "notFound": "Role with ID {id} not found.",
+      "references": "Role cannot be deleted due to existing references."
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "The role name is required.",
+      "maxLength": "The role name must be less than 50 characters.",
+      "IsNotEmpty": "The role name cannot be empty.",
+      "alreadyExists": "A role with this name already exists."
+    },
+    "description": {
+      "maxLength": "The description must be less than 255 characters.",
+      "isNotEmpty": "The description cannot be empty.",
+      "isString": "The description must be a valid string."
+    },
+    "role": {
+      "name": "Role name validation failed."
+    }
+  }
+}

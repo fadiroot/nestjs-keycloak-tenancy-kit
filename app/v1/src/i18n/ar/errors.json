@@ -1,0 +1,5 @@
+{
+  "notFound": "لم يتم العثور على {resource} بالمعرف {id}",
+  "database": "حدث خطأ في قاعدة البيانات أثناء {operation} لـ {resource}",
+  "forbidden": "ليس لديك إذن لـ {action} {resource}."
+}

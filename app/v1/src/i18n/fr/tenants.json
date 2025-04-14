@@ -1,0 +1,53 @@
+{
+    "create": {
+      "success": "Locataire créé avec succès.",
+      "error": "Échec de la création du locataire."
+    },
+    "findAll": {
+      "success": "Locataires récupérés avec succès.",
+      "error": "Échec de la récupération des locataires."
+    },
+    "findOne": {
+      "success": "Locataire récupéré avec succès.",
+      "error": {
+        "notFound": "Locataire avec l'ID {id} non trouvé."
+      }
+    },
+    "update": {
+      "success": "Locataire {name} mis à jour avec succès.",
+      "error": {
+        "notFound": "Locataire avec l'ID {id} non trouvé.",
+        "duplicate": "Le nom du locataire existe déjà."
+      }
+    },
+    "delete": {
+      "success": "Locataire {name} supprimé avec succès.",
+      "error": {
+        "notFound": "Locataire avec l'ID {id} non trouvé.",
+        "references": "Le locataire ne peut pas être supprimé en raison de références existantes."
+      }
+    },
+    "validation": {
+      "name": {
+        "isString": "Le nom du locataire doit être une chaîne de caractères.",
+        "isNotEmpty": "Le nom du locataire est requis."
+      },
+      "domain": {
+        "isString": "Le nom de domaine doit être une chaîne de caractères.",
+        "isNotEmpty": "Le nom de domaine est requis."
+      },
+      "ownerEmail": {
+        "isEmail": "L'email du propriétaire doit être une adresse email valide.",
+        "isNotEmpty": "L'email du propriétaire est requis."
+      },
+      "ownerFirstName": {
+        "isString": "Le prénom du propriétaire doit être une chaîne de caractères.",
+        "isNotEmpty": "Le prénom du propriétaire est requis."
+      },
+      "ownerLastName": {
+        "isString": "Le nom de famille du propriétaire doit être une chaîne de caractères.",
+        "isNotEmpty": "Le nom de famille du propriétaire est requis."
+      }
+    }
+  }
+  

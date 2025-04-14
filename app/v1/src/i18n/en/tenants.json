@@ -1,0 +1,53 @@
+{
+  "create": {
+    "success": "Tenant created successfully.",
+    "error": "Failed to create tenant."
+  },
+  "findAll": {
+    "success": "Tenants retrieved successfully.",
+    "error": "Failed to retrieve tenants."
+  },
+  "findOne": {
+    "success": "Tenant retrieved successfully.",
+    "error": {
+      "notFound": "Tenant with ID {id} not found."
+    }
+  },
+  "update": {
+    "success": "Tenant {name} updated successfully.",
+    "error": {
+      "notFound": "Tenant with ID {id} not found.",
+      "duplicate": "Tenant name already exists."
+    }
+  },
+  "delete": {
+    "success": "Tenant {name} deleted successfully.",
+    "error": {
+      "notFound": "Tenant with ID {id} not found.",
+      "references": "Tenant cannot be deleted due to existing references."
+    }
+  },
+  "validation": {
+    "name": {
+      "isString": "The tenant name must be a string.",
+      "isNotEmpty": "The tenant name is required."
+    },
+    "domain": {
+      "isString": "The domain name must be a string.",
+      "isNotEmpty": "The domain name is required.",
+      "alreadyExist": "This is domain already exist."
+    },
+    "ownerEmail": {
+      "isEmail": "The owner email must be a valid email address.",
+      "isNotEmpty": "The owner email is required."
+    },
+    "ownerFirstName": {
+      "isString": "The owner's first name must be a string.",
+      "isNotEmpty": "The owner's first name is required."
+    },
+    "ownerLastName": {
+      "isString": "The owner's last name must be a string.",
+      "isNotEmpty": "The owner's last name is required."
+    }
+  }
+}

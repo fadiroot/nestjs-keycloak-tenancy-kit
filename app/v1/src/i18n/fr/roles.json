@@ -1,0 +1,46 @@
+{
+  "create": {
+    "success": "Rôle créé avec succès.",
+    "error": "Échec de la création du rôle."
+  },
+  "getAll": {
+    "success": "Rôles récupérés avec succès.",
+    "error": "Échec de la récupération des rôles."
+  },
+  "get": {
+    "success": "Rôle récupéré avec succès.",
+    "error": {
+      "notFound": "Rôle avec l'identifiant {id} introuvable."
+    }
+  },
+  "update": {
+    "success": "Rôle {name} mis à jour avec succès.",
+    "error": {
+      "notFound": "Rôle avec l'identifiant {id} introuvable.",
+      "duplicate": "Le nom du rôle existe déjà."
+    }
+  },
+  "delete": {
+    "success": "Rôle {name} supprimé avec succès.",
+    "error": {
+      "notFound": "Rôle avec l'identifiant {id} introuvable.",
+      "references": "Impossible de supprimer le rôle en raison de références existantes."
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "Le nom du rôle est requis.",
+      "maxLength": "Le nom du rôle doit comporter moins de 50 caractères.",
+      "IsNotEmpty": "Le nom du rôle ne peut pas être vide.",
+      "alreadyExists": "Un rôle avec ce nom existe déjà."
+    },
+    "description": {
+      "maxLength": "La description doit comporter moins de 255 caractères.",
+      "isNotEmpty": "La description ne peut pas être vide.",
+      "isString": "La description doit être une chaîne valide."
+    },
+    "role": {
+      "name": "Échec de la validation du nom du rôle."
+    }
+  }
+}
