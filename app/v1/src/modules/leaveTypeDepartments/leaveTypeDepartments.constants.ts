@@ -1,1 +1,0 @@
-export const LEAVE_TYPE_DEPARTMENTS = "leave_type_departments"

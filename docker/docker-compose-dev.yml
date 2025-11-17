@@ -21,12 +21,7 @@ services:
     env_file:
       - ../.env
     labels:
-        io.portainer.accesscontrol.users: softyhr  
-   # healthcheck:
-   #   test: ['CMD-SHELL', 'curl -f http://localhost:${APP_PORT}/health || exit 1']
-   #  interval: 30s
-   #  timeout: 10s
-   #  retries: 5
+        io.portainer.accesscontrol.users: companyhr  
  
   db:
     image: postgres:16
@@ -47,7 +42,7 @@ services:
       retries: 5
     command: ['postgres', '-c', 'max_connections=1000']
     labels:
-        io.portainer.accesscontrol.users: softyhr  
+        io.portainer.accesscontrol.users: companyhr  
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.0
@@ -81,25 +76,17 @@ services:
       - KC_METRICS_ENABLED=true
       - KC_FEATURES=preview
       - KC_HOSTNAME_STRICT=true
-      - KC_HOSTNAME=https://softy-hr-auth.softylines.com
-#      - KC_PROXY=edge
+      - KC_HOSTNAME=https://company-hr-auth.company.com
       - KC_HTTP_ENABLED=false
       - KC_HTTPS_REQUIRED=all
       - KC_SPI_COOKIE_DEFAULT_SAME_SITE_STRICT=false
       - KC_SPI_COOKIE_DEFAULT_SECURE=false
       - KC_SPI_COOKIE=default
       - NODE_ENV=${NODE_ENV}
-#      - API_HOST = ${API_HOST}
-#      - APP_PORT = ${APP_PORT}
-#    healthcheck:
-#      test: ['CMD', 'curl', '-f', 'http://localhost:8080/health/ready || exit 1']
-#      interval: 30s
-#      timeout: 10s
-#      retries: 5
     networks:
       - tenant-network
     labels:
-        io.portainer.accesscontrol.users: softyhr  
+        io.portainer.accesscontrol.users: companyhr  
  
   adminer:
     image: adminer
@@ -111,7 +98,7 @@ services:
     networks:
       - tenant-network
     labels:
-        io.portainer.accesscontrol.users: softyhr  
+        io.portainer.accesscontrol.users: companyhr  
  
 networks:
   tenant-network:

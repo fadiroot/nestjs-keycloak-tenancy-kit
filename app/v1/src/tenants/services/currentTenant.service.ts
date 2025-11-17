@@ -17,7 +17,7 @@ export class CurrentTenantService {
     console.log('Tenant set:', tenant?.name);
   }
 
-  private logPotentialConflict(type: string, existing: any, incoming: any) {
+  private logPotentialConflict(type: string, existing: Tenant.selectable, incoming: Tenant.selectable) {
     console.warn(`Potential ${type} Connection Conflict`, {
       existingId: existing.id,
       incomingId: incoming.id,

@@ -92,7 +92,7 @@ export default class SetupContainer {
           NetworkMode: networkName,
         },
         labels: {
-          'io.portainer.accesscontrol.users': 'softyhr',
+          'io.portainer.accesscontrol.users': 'companyhr',
         },
       },);
 

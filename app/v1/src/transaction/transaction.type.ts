@@ -1,10 +1,10 @@
 export interface TransactionContext {
-    [key: string]: any;
+    [key: string]: unknown;
   }
   
   export interface TransactionStep<T extends TransactionContext> {
     name: string;
-    execute: (context: T) => Promise<any>;
+    execute: (context: T) => Promise<unknown>;
     rollback: (context: T) => Promise<void>;
   }
   

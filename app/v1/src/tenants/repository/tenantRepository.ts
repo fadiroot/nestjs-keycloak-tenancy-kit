@@ -4,13 +4,14 @@ import { Tenant, TenantMapper } from '../../database/tenantsTable';
 import { TenantDatabaseManager } from '../database/tenantDatabaseManager';
 import { DB_CONNECTION } from '../../database/constants';
 import { TENANTS_TABLE } from '../constants';
+import { Database } from '../../database/database';
 
 @Injectable()
 export class TenantRepository implements ITenantRepository {
   private readonly logger = new Logger(TenantRepository.name);
 
   constructor(
-    @Inject(DB_CONNECTION) private db: any,
+    @Inject(DB_CONNECTION) private db: Database,
 
     private tenantDatabaseManager: TenantDatabaseManager
   ) {}
@@ -19,7 +20,7 @@ export class TenantRepository implements ITenantRepository {
     return await this.db
       .selectFrom(TENANTS_TABLE)
       .selectAll()
-      .where('domain', '=', domain)
+      .where('host_domain', '=', domain)
       .executeTakeFirst();
   }
 
@@ -88,7 +89,7 @@ export class TenantRepository implements ITenantRepository {
     try {
       const updatedTenant = await this.db
         .updateTable(TENANTS_TABLE)
-        .set({ updatedTenantData, updated_at: new Date() })
+        .set({ ...updatedTenantData, updated_at: new Date() })
         .where('id', '=', id)
         .returningAll()
         .executeTakeFirstOrThrow();

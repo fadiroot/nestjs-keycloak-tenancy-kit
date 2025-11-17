@@ -1,9 +1,0 @@
-{
-    "getStatistics": {
-        "success": "Statistiques récupérées avec succès.",
-        "error": {
-            "invalidEntity": "Entité fournie invalide. Seuls 'department' ou 'location' sont autorisés.",
-            "retrievalFailed": "Échec de la récupération des statistiques."
-        }
-    }
-}

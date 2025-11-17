@@ -20,14 +20,14 @@ const getKeycloakConfig = () => {
   const configs = {
     development: {
       authServerUrl: process.env.KEYCLOAK_URL || 'http://keycloak:8080',
-      realm: process.env.KEYCLOAK_REALM || 'softy',
-      clientId: process.env.KEYCLOAK_CLIENT_ID || 'softy-hr',
+      realm: process.env.KEYCLOAK_REALM || 'company',
+      clientId: process.env.KEYCLOAK_CLIENT_ID || 'company-hr',
       secret: process.env.KEYCLOAK_CLIENT_SECRET,
     },
     production: {
-      authServerUrl: 'https://softy-hr-auth.softylines.com',
-      realm: process.env.KEYCLOAK_REALM || 'softy',
-      clientId: process.env.KEYCLOAK_CLIENT_ID || 'softy-hr',
+      authServerUrl: 'https://company-hr-auth.company.com',
+      realm: process.env.KEYCLOAK_REALM || 'company',
+      clientId: process.env.KEYCLOAK_CLIENT_ID || 'company-hr',
       secret: process.env.KEYCLOAK_CLIENT_SECRET,
     },
   };

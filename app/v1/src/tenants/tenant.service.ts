@@ -4,12 +4,13 @@ import {
   Logger,
   InternalServerErrorException,
 } from '@nestjs/common';
+import axios from 'axios';
 import { CreateTenantDto } from './dto/createTenant.dto';
 import { Tenant } from '../database/tenantsTable';
 import SetupContainer from './services/setupContainer.service';
 import { ITenantRepository } from './repository/tenantRepositoryInterface';
 import { TENANT_REPOSITORY_TOKEN } from './constants';
-import { KeycloakTenantService } from './services/keycloakTenant.service';
+import { KeycloakTenantService, OrganizationData } from './services/keycloakTenant.service';
 import { UpdateTenantDto } from './dto/updateTenant.dto';
 import { UpdatedOrganizationData } from './services/keycloakTenant.service';
 import { BadRequestException } from '../common/exceptions/application.exceptions';
@@ -32,8 +33,8 @@ interface TenantTransactionContext extends TransactionContext {
   keycloakOrgId?: string;
   tenantRecord?: Tenant.selectable;
   createTenantDto?: CreateTenantDto;
-  keycloakResponse?: any;
-  keycloakOrgData?: any;
+  keycloakResponse?: axios.AxiosResponse;
+  keycloakOrgData?: OrganizationData;
   updateTenantDto?: UpdateTenantDto;
   existingTenant?: Tenant.selectable;
   updatedOrganizationData?: UpdatedOrganizationData;

@@ -1,3 +1,3 @@
-/Users/takiacademy/Desktop/softy-hr-api/keycloak-custom/keycloak-custom-event-listener/src/main/java/com/example/keycloak/spi/OrganizationEventListenerProvider.java
-/Users/takiacademy/Desktop/softy-hr-api/keycloak-custom/keycloak-custom-event-listener/src/main/java/com/example/keycloak/spi/OrganizationEventProvider.java
-/Users/takiacademy/Desktop/softy-hr-api/keycloak-custom/keycloak-custom-event-listener/src/main/java/com/example/keycloak/spi/OrganizationEventListenerFactory.java
+/Users/takiacademy/Desktop/company-hr-api/keycloak-custom/keycloak-custom-event-listener/src/main/java/com/example/keycloak/spi/OrganizationEventListenerProvider.java
+/Users/takiacademy/Desktop/company-hr-api/keycloak-custom/keycloak-custom-event-listener/src/main/java/com/example/keycloak/spi/OrganizationEventProvider.java
+/Users/takiacademy/Desktop/company-hr-api/keycloak-custom/keycloak-custom-event-listener/src/main/java/com/example/keycloak/spi/OrganizationEventListenerFactory.java

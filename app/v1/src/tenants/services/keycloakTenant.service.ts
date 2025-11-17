@@ -5,9 +5,8 @@ import { ConfigService } from '@nestjs/config';
 import { opendirSync } from 'fs';
 import { response } from 'express';
 import FormData from 'form-data';
-import { InviteUserDto } from '../../modules/user/dto/inviteUser.dto';
+import { InviteUserDto } from '../dto/inviteUser.dto';
 import { handleKeycloakError } from '../utilis/handleKeycloakError';
-import { UserService } from '../../modules/user/user.service';
 
 export interface Domain {
   name: string;
@@ -47,7 +46,6 @@ export class KeycloakTenantService {
   private readonly adminClientId: string;
   private readonly grantType: string;
   private readonly clientSecret: string;
-  logger: any;
 
   constructor(
     private configService: ConfigService , 
@@ -87,7 +85,7 @@ export class KeycloakTenantService {
   async createOrganization( 
     organizationData: OrganizationData,
  
-  ): Promise<any> {
+  ): Promise<axios.AxiosResponse> {
     const token = await this.getAdminToken();
     const createOrganizationUrl = `${this.keycloakUrl}/admin/realms/${this.realm}/organizations`;
 

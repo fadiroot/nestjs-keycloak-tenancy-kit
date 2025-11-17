@@ -40,9 +40,7 @@ export async function up(db: Kysely<unknown>) {
       leaveBalance INTEGER DEFAULT 0,
       created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-      deleted_at TIMESTAMP DEFAULT NULL,
-      FOREIGN KEY (department_id) REFERENCES departments(id),
-      FOREIGN KEY (location_id) REFERENCES locations(id)
+      deleted_at TIMESTAMP DEFAULT NULL
     );
   `.execute(db);
 

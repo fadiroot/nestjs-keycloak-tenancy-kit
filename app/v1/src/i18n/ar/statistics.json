@@ -1,9 +1,0 @@
-{
-    "getStatistics": {
-        "success": "تم استرجاع الإحصائيات بنجاح.",
-        "error": {
-            "invalidEntity": "تم تقديم كيان غير صالح. يُسمح فقط بـ 'department' أو 'location'.",
-            "retrievalFailed": "فشل في استرجاع الإحصائيات."
-        }
-    }
-}

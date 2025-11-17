@@ -12,14 +12,14 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors: {
       origin: [
-        'https://softyhr-monorepo.vercel.app',
-        'https://employee-softyhr-monorepo.vercel.app',
+        'https://companyhr-monorepo.vercel.app',
+        'https://employee-companyhr-monorepo.vercel.app',
         'http://localhost:4200',
         'http://localhost:4201',
         'http://127.0.0.1:4200',
         'http://127.0.0.1:4201',
-        'https://dev-admin-hr.softylines.com',
-        'https://dev-employee-hr.softylines.com',
+        'https://dev-admin-hr.company.com',
+        'https://dev-employee-hr.company.com',
       ],
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
       credentials: true,

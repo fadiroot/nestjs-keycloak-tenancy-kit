@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 
 export function setupSwagger(app: INestApplication, configService: ConfigService): void {
   const config = new DocumentBuilder()
-    .setTitle('SoftyRh API Documentation')
+    .setTitle('companyRh API Documentation')
     .setDescription(`
       ## Authentication
       This API uses JWT Bearer token authentication.
